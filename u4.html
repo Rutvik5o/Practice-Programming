@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript">
+        function hello()
+        {
+            var a=document.getElementById("name").value;
+            if(a=="")
+            {
+                document.getElementById("message").innerHTML="Please fill the name";
+                return false;
+
+            }
+            if(a.length<3)
+            {
+                document.getElementById("message").innerHTML="Please enter more than 3 characters";
+                return false;
+            }
+            if(a.length>15)
+            {
+                document.getElementById("message").innerHTML="Please enter character less than 15";
+                return false;
+            }
+
+            var exp=/^[A-Za-z]+$/;
+            if(a.match(exp))
+            return true;
+            else
+            {
+                document.getElementById("message").innerHTML="Please Enter only characters";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return hello()">
+        Enter Your Name:<input type="text" id="name">
+        <span id="message"></span><br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

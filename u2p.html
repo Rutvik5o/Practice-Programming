@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>sum of two numbers</title>
+    <script type="text/javascript">
+        function plus()
+        {
+            var a=Number(document.getElementById("n1").value);
+            var b=Number(document.getElementById("n2").value);
+
+                var c=a+b;
+                document.write("Your Answer is:"+c);
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        Number1:<input type="text" id="n1"/><br>
+        Number2:<input type="text" id="n2"/><br>
+        <input type="submit" onClick="plus()"/>
+    </form>
+</body>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Factorial</title>
+    <script type="text/javascript">
+        function add()
+        {
+             var a=Number(document.getElementById("fname").value);
+              
+             var i;
+
+             var sum=0;
+
+             for(i=0;i<=a;i++)
+             {
+                sum=sum+i;
+             }
+             document.write("Factorial is:"+sum);
+
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        Enter Number:<input type="text" id="fname">
+        <br><br>
+        <input type="submit" onclick="add()">
+    </form>
+</body>
