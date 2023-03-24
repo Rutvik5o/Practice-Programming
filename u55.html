@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>reverse string</title>
+    <script type="text/javascript">
+
+    function hey()
+    {
+        var s="";
+        var a=document.getElementById('word').value;
+
+        for(var i=a.length-1;i>=0;i--)
+        {
+
+          s+=a[i];
+        }
+        alert(s);
+
+    }
+    </script>
+</head>
+<body>
+    <form onsubmit="hey()">
+
+        Enter Your String:<input type="text" id="word">
+        <br>
+        <input type="submit" value="submit">
+
+    </form>
+</body>
