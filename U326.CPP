@@ -9,29 +9,31 @@ class employee
 
   protected:
 
-  void ComputePay();
+  void ComputePay(int hours)
+  {
+    salary=600*hours;
+  }
 
-    void ComputePay(int hours)
-    {
-      salary= 600 * hours;
-    }
+  void getdata()
+  {
+    cout<<"\nEnter Employee ID=> ";
+    cin>>id;
 
-    void input()
-    {
-      cout<<"\nEnter Employeee ID-> ";
-      cin>>id;
+    cout<<"\nEnter Employee Name-> ";
+    cin>>name;
 
-      cout<<"\nEnter Name-> ";
-      cin>>name;
+  }
 
-    }
+  void display()
+  {
+    cout<<endl<<"\nEmployee Details=>\n";
 
-    void display()
-    {
-      cout<<"\nEmployee ID=> "<<id<<endl;
-      cout<<"\nEmployee Name=> "<<name<<endl;
-      cout<<"\nWeekly Salary=> "<<salary<<endl;
-    }
+    cout<<"\nEmployee ID=> "<<id;
+
+    cout<<"\nEmployee Name=> "<<name;
+
+    cout<<"\nWeekly Salary Of Employee=> "<<salary;
+  }
 };
 
 class male:public employee
@@ -40,51 +42,52 @@ class male:public employee
 
   public:
 
-     void salary()
-     {
-       input();
+  void get()
+  {
+    getdata();
 
-       cout<<"\nEnter Employee's Are Worked(in hours)-> ";
-       cin>>hours;
-       ComputePay(hours);
+    cout<<"\nEnter Weekly Hours which they worked-> ";
+    cin>>hours;
 
-     }
+    ComputePay(hours);
+  }
 
-     void output()
-     {
-       display();
-     }
+  void disp()
+  {
+     display();
+  }
 };
 
-class female:public employee
+class female: public employee
 {
+  int hours;
+
   public:
 
-    void salary()
-    {
-      input();
-      ComputePay(40);
-    }
+  void get()
+  {
+    getdata();
 
-    void output()
-    {
-      display();
-    }
+    ComputePay(40);
+  }
+
+  void disp()
+  {
+   display();
+  }
 };
 
 void main()
 {
-  clrscr();
-  male m1;
-  m1.salary();
+ clrscr();
 
-  female f1;
-  f1.salary();
+ male m1;
+ female f2;
 
-  cout<<"\nEmployee Details=> \n";
+ m1.get();
+ f2.get();
 
-  m1.output();
-  f1.output();
-
-  getch();
+ m1.disp();
+ f2.disp();
+ getch();
 }

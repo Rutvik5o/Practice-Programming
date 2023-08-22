@@ -5,16 +5,18 @@ class publisher
 {
   protected:
 
-   char title[20];
+  char title[20];
 
-   void input()
-   {
-     cout<<"\nEnter Title Name-> ";
-     cin>>title;
-   }
+  public:
+
+  void input()
+  {
+   cout<<"\nEnter Title Name-> ";
+   cin>>title;
+  }
 };
 
-class book: public publisher
+class Book:public publisher
 {
   int pages;
 
@@ -24,50 +26,53 @@ class book: public publisher
   {
     publisher::input();
 
-    cout<<"\nEnter No. Of Pages-> ";
+    cout<<"\nEnter Number Of Pages-> ";
     cin>>pages;
-
   }
 
   void display()
   {
-    cout<<"\nTitle=> "<<title;
-    cout<<"\nNo. Of Pages=> "<<pages;
+     cout<<"\nTitle=> "<<title<<endl;
+     cout<<"\nPages=> "<<pages<<endl;
   }
 };
 
-class tape: public publisher
+class Tape: public publisher
 {
   int time;
 
   public:
 
-    void input()
-    {
-      cout<<"\nEnter Playing Time(Min)-> ";
-      cin>>time;
-    }
+  void input()
+  {
+  cout<<"\nEnter Playing Min Of Tape-> ";
+  cin>>time;
+  }
 
-    void display()
-    {
-      cout<<"\nTotal Playing Time(Min)=> "<<time<<endl;
-    }
+  void display()
+  {
+    cout<<"\nPlaying Time Of Tape=> "<<time;
+  }
 };
 
 void main()
 {
   clrscr();
 
-  book b1;
-  tape t1;
+  Book b1;
+  Tape t1;
 
   cout<<"\nEnter Details:\n";
+
   b1.input();
   t1.input();
 
-  cout<<"\nOutput=>\n";
+  cout<<"\nData:\n";
+
   b1.display();
   t1.display();
 
   getch();
 }
+
+
