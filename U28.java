@@ -1,6 +1,6 @@
 //write an interface called exam with a method pass that returns a boolean. Write another interface called
 //classify with a (int average) method Divison. which returns a string. Write a class called Result which 
-//implements both exam & classify. The pass method should return true if the marks is greather than or equal
+//implements both exam & classify. The pass method should return true if the marks is greater than or equal
 //to 35 else false. The divison method must a return "First" when the parameter average is 60 or more "Second"
 //when average is 50 or more but below 60", "No Divison" when average is less than 60.
 
