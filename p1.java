@@ -1,18 +1,15 @@
-//write a program to evulate simple interest of given principle, rate & time.
+//create a package p and within that package create class PackClass which have method called findmax().
+//which find maximum value from three numbers. Now import the package within another class democlass 
+//& now display the maximum number.
 
 
-class p1
+package p;
+
+public class p1
 {
-    public static void main(String []args)
+    public int findmax(int a,int b,int c)
     {
-        float p,r,t,si;
-
-        p=13000 ;r=12; t=2;
-
-        si=(p*r*t)/100;
-
-        System.out.println("Simple Interest=> "+si);
- 
-
+        int max=(a>b)?((a>c)?a:c):((b>c)?b:c);
+        return max;
     }
 }

@@ -1,22 +1,70 @@
-//write a java program to scan 3 integer values from the command line argument & 
-//display the maximum another using conditional operator.
+//Write a program that accpect a string from command line and perform following operations:
 
+//1.display each character on seperate line in reverse order.
+//2.count total number fo character & display each character's position too.
+//3.Identif the whether the string is palindrome or not.
+//4.Count total number of uppercase & lowercase character in it.
 
 class p4
 {
     public static void main(String []args)
     {
-        int a,b,c,max;
+        char c[]=args[0].toCharArray();
 
-        a=Integer.parseInt(args[0]);
+        System.out.println("\nDisplay Each characteer on seperate line in reverse order");
 
-        b=Integer.parseInt(args[1]);
+        for(int i=0;i<c.length;i++)
+        {
+            System.out.println(c[i]);
+        }
 
-        c=Integer.parseInt(args[1]);
+        System.out.println("\nCount Total Number of character & display each characters' position");
 
-        max=(a>b)?((a>c)?a:c):((b>c)?b:c);
+        System.out.println("\nTotal Number of Character's Are=> "+c.length);
+        
 
-        System.out.println("Maximum Number=> "+max);
+        for(int i=0;i<c.length;i++)
+        {
+            System.out.println(c[i]+ " Character On=> "+i+" Position");
+        }
+
+        System.out.println("\nIndentify the String is palindrome or not");
+
+        String orgStr,revStr="";
+
+        orgStr=args[0];
+
+        int len=orgStr.length();
+
+        for(int i=len-1;i>=0;i--)
+        {
+            revStr=revStr+orgStr.charAt(i);
+            System.out.println("\nReverse String=> "+revStr);
+        }
+
+        if(orgStr.equals(revStr))
+    {
+        System.out.println("\nString is palindrome");
+    }
+    else
+    {
+        System.out.println("\nString is not palindrome");
     }
 
+    System.out.println("\nTotal Number of UpperCase & LowerCase Characters");
+
+    int up=0,lw=0;
+
+    for(int i=0;i<c.length;i++)
+    {
+        if(Character.isUpperCase(c[i]))
+        up++;
+        else
+        lw++;
+    }
+
+    System.out.println("UpperCase Character Are=> "+up);
+
+    System.out.println("LowerCase Character Are=> "+lw);
+    }
 }

@@ -1,25 +1,44 @@
-//write a java program to calculate the hypotenuse of right angled triangle when other 
-//side of triagle are given.
-
-
-//Hypoteuse=> square root (x*x +y*y) using command line argument.
-
-import java.util.*;
+//Write a java program to input n integers numbers and display lowest
+//and second lowest number. Also handle the different exceptions
+//possibel to be thrown during execution.
 
 class p5
 {
     public static void main(String []args)
     {
-        Scanner Obj=new Scanner(System.in);
+        int a[]=new int[args.length];
 
-        System.out.println("Enter the value of x & y");
+        try
+        {
+            for(int i=0;i<args.length;i++)
+            {
+                a[i]=Integer.parseInt(args[i]);
+            }
 
-        int a=Obj.nextInt();
+            for(int i=0;i<args.length;i++)
+            {
+                for(int j=i+1;j<args.length;j++)
+                {
+                    if(a[i]>a[j])
+                    {
+                        int temp=a[i];
+                        a[i]=a[j];
+                        a[j]=temp;
+                    }
+                }
+            }
 
-        int b=Obj.nextInt();
+            System.out.println("Lowest=> "+a[0]+"\nSecond Lowest=> "+a[1]);
+        }
+        catch(ArrayIndexOutOfBoundsException e)
+        {
+                 System.out.println("\nPrinting Error=> "+"\nArray Index Out oF Bounds -> Enter Command line Arugment");
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Printing Error=> "+"\nNumber Format Exception -> Enter Numbers Only");
+        }
 
-        double hyp=Math.sqrt((a*a)+(b*b));
 
-        System.out.println("Hypotenuse=> "+hyp);
     }
 }
